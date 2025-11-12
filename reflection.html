@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Lesson Reflection</title>
+<!-- Google Fonts: Cormorant (headlines) & Lato (body) -->
+<link href="https://fonts.googleapis.com/css2?family=Cormorant:wght@500;700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#ffffff;
+    --card:#f8f9fb;
+    --ink:#1f2937;
+    --muted:#6b7280;
+    --accent:#9b5c4f;        /* updated accent */
+    --accent-dark:#7f4a3f;   /* darker shade for hover */
+    --border:#e5e7eb;
+    --valid:#16a34a;
+    --warn:#dc2626;
+    --focus: rgba(155,92,79,0.2); /* focus ring tinted by accent */
+    --radius:14px;
+    --shadow:0 8px 24px rgba(0,0,0,.07);
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0; padding:24px;
+    font-family:'Lato', system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+    color:var(--ink); background:var(--bg);
+    line-height:1.5;
+  }
+  h1, h2, h3, h4, h5 { font-family:'Cormorant', serif; }
+  .wrap{
+    max-width:920px; margin:0 auto;
+    background:var(--card); border:1px solid var(--border);
+    border-radius:var(--radius); box-shadow:var(--shadow);
+    padding: clamp(16px, 3vw, 28px);
+  }
+  h1{font-size:1.75rem; margin:0 0 6px}
+  p.lead{color:var(--muted); margin:.25rem 0 1rem}
+  .note{font-size:.9rem; color:var(--muted); margin:0 0 1rem}
+  .q{
+    background:#fff; border:1px solid var(--border); border-radius:12px;
+    padding:16px; margin:12px 0 18px;
+  }
+  .qlabel{
+    display:block; font-weight:700; margin:0 0 8px; font-size:1.05rem; font-family:'Lato', sans-serif;
+  }
+  textarea{
+    width:100%; min-height:120px; resize:vertical;
+    border:1px solid var(--border); border-radius:10px; padding:12px 12px 28px 12px;
+    font:inherit; line-height:1.45; color:var(--ink); background:#fff;
+    outline:none; transition: box-shadow .15s, border-color .15s;
+  }
+  textarea:focus{ border-color:var(--accent); box-shadow:0 0 0 4px var(--focus); }
+  .meta{
+    display:flex; gap:8px; align-items:center; justify-content:space-between; margin-top:6px;
+  }
+  .counter{ font-size:.85rem; color:var(--muted);} 
+  .counter.ok{ color:var(--valid); }
+  .counter.warn{ color:var(--warn); }
+  .actions{
+    display:flex; flex-wrap:wrap; gap:10px; margin-top:8px;
+  }
+  button{
+    appearance:none; border:1px solid var(--accent); background:var(--accent);
+    color:#fff; padding:10px 14px; border-radius:10px; font-weight:700; cursor:pointer;
+    transition: transform .05s ease, background .15s, border-color .15s;
+  }
+  button:active { transform: translateY(1px); }
+  button.secondary{
+    background:#fff; color:var(--accent); border-color:var(--accent);
+  }
+  button:hover{ background:var(--accent-dark); border-color:var(--accent-dark); }
+  button.secondary:hover{ color:#fff; background:var(--accent-dark); border-color:var(--accent-dark); }
+  .hr{ height:1px; background:var(--border); margin:16px 0 10px; }
+  .tiny{ font-size:.8rem; color:var(--muted); }
+  .sr-only{ position:absolute !important; height:1px; width:1px; overflow:hidden; clip:rect(1px, 1px, 1px, 1px); white-space:nowrap; }
+</style>
+</head>
+<body>
+  <main class="wrap" role="main">
+    <h1>Moment of Reflection</h1>
+    <p class="lead">Take a minute to capture your insights from this lesson. Your responses are private and saved in your browser on this device.</p>
+    <p class="note">Tip: You can download or print your notes at the end. (Max <strong>1000 characters</strong> per answer.)</p>
+
+    <!-- QUESTION 1 -->
+    <section class="q">
+      <label class="qlabel" for="q1">1) After completing this lesson, what did you find most impactful?</label>
+      <textarea id="q1" maxlength="1000" aria-describedby="q1-count q1-help"></textarea>
+      <div id="q1-help" class="sr-only">You can enter up to 1000 characters.</div>
+      <div class="meta">
+        <span id="q1-count" class="counter">0 / 1000</span>
+        <div class="actions">
+          <button type="button" class="secondary" data-clear="q1" aria-label="Clear answer for question 1">Clear</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- QUESTION 2 -->
+    <section class="q">
+      <label class="qlabel" for="q2">2) Please share 1–2 behaviors that you plan to elevate and improve moving forward.</label>
+      <textarea id="q2" maxlength="1000" aria-describedby="q2-count q2-help"></textarea>
+      <div id="q2-help" class="sr-only">You can enter up to 1000 characters.</div>
+      <div class="meta">
+        <span id="q2-count" class="counter">0 / 1000</span>
+        <div class="actions">
+          <button type="button" class="secondary" data-clear="q2" aria-label="Clear answer for question 2">Clear</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- QUESTION 3 -->
+    <section class="q">
+      <label class="qlabel" for="q3">3) If you are reading a future guest comment, what would you like it to say about the service you provided?</label>
+      <textarea id="q3" maxlength="1000" aria-describedby="q3-count q3-help"></textarea>
+      <div id="q3-help" class="sr-only">You can enter up to 1000 characters.</div>
+      <div class="meta">
+        <span id="q3-count" class="counter">0 / 1000</span>
+        <div class="actions">
+          <button type="button" class="secondary" data-clear="q3" aria-label="Clear answer for question 3">Clear</button>
+        </div>
+      </div>
+    </section>
+
+    <div class="hr" role="separator" aria-hidden="true"></div>
+
+    <section aria-label="Save and export">
+      <div class="actions" style="margin-top:10px">
+        <button id="downloadBtn" type="button" aria-label="Download your responses as a text file">Download my notes</button>
+        <button id="printBtn" type="button" class="secondary" aria-label="Print your responses">Print</button>
+        <button id="clearAllBtn" type="button" class="secondary" aria-label="Clear all answers">Clear all</button>
+      </div>
+      <p class="tiny" id="saveStatus" aria-live="polite" style="margin-top:8px;">Autosaved <span id="savedWhen">just now</span> • Saved only on this device</p>
+    </section>
+  </main>
+
+<script>
+(function(){
+  const MAX = 1000;
+  const ids = ["q1","q2","q3"];
+  const key = "rise_reflection_v1"; // change if you want a new slate per lesson
+
+  const $ = sel => document.querySelector(sel);
+  const byId = id => document.getElementById(id);
+
+  function updateCounter(id){
+    const ta = byId(id);
+    const count = ta.value.length;
+    const el = byId(id + "-count");
+    el.textContent = count + " / " + MAX;
+    el.classList.toggle("ok", count > 0 && count <= MAX);
+    el.classList.toggle("warn", count > MAX);
+  }
+
+  function save(){
+    try{
+      const data = {
+        ts: Date.now(),
+        q1: byId("q1").value || "",
+        q2: byId("q2").value || "",
+        q3: byId("q3").value || ""
+      };
+      localStorage.setItem(key, JSON.stringify(data));
+      setSavedWhen(data.ts);
+    }catch(e){
+      console.warn("Autosave unavailable:", e);
+      $("#saveStatus").textContent = "Autosave unavailable in this browser/session.";
+    }
+  }
+
+  function load(){
+    try{
+      const raw = localStorage.getItem(key);
+      if(!raw) return;
+      const data = JSON.parse(raw);
+      ids.forEach(id => {
+        if(typeof data[id] === "string") byId(id).value = data[id];
+        updateCounter(id);
+      });
+      if(data.ts) setSavedWhen(data.ts);
+    }catch(e){
+      console.warn("Load failed:", e);
+    }
+  }
+
+  function setSavedWhen(ts){
+    const s = new Date(ts);
+    const options = { year:"numeric", month:"short", day:"2-digit", hour:"2-digit", minute:"2-digit" };
+    byId("savedWhen").textContent = s.toLocaleString(undefined, options);
+  }
+
+  function clearField(id){
+    const ta = byId(id);
+    ta.value = "";
+    updateCounter(id);
+    save();
+    ta.focus();
+  }
+
+  function clearAll(){
+    ids.forEach(id => { byId(id).value = ""; updateCounter(id); });
+    try{ localStorage.removeItem(key); }catch(e){}
+    setSavedWhen(Date.now());
+  }
+
+  function download(){
+    const content =
+`Lesson Reflection
+=================
+
+1) After completing this lesson, what did you find most impactful?
+${byId("q1").value.trim()}
+
+2) Please share 1–2 behaviors that you plan to elevate and improve moving forward.
+${byId("q2").value.trim()}
+
+3) If you are reading a future guest comment, what would you like it to say about the service you provided?
+${byId("q3").value.trim()}
+
+Saved: ${new Date().toLocaleString()}
+`;
+    const blob = new Blob([content], {type:"text/plain;charset=utf-8"});
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = "Lesson_Reflection.txt";
+    document.body.appendChild(a);
+    a.click();
+    a.remove();
+    URL.revokeObjectURL(url);
+  }
+
+  // Events
+  ids.forEach(id => {
+    const ta = byId(id);
+    updateCounter(id);
+    ta.addEventListener("input", () => {
+      if(ta.value.length > MAX){
+        ta.value = ta.value.slice(0, MAX);
+      }
+      updateCounter(id);
+      save();
+    });
+  });
+
+  document.querySelectorAll("[data-clear]").forEach(btn=>{
+    btn.addEventListener("click", e => clearField(e.currentTarget.getAttribute("data-clear")));
+  });
+
+  byId("downloadBtn").addEventListener("click", download);
+  byId("printBtn").addEventListener("click", ()=> window.print());
+  byId("clearAllBtn").addEventListener("click", clearAll);
+
+  // Initialize
+  load();
+  // Save once on load to set timestamp
+  save();
+})();
+</script>
+</body>
+</html>
